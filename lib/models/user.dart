@@ -2,7 +2,11 @@ import '../string_util.dart';
 
 enum LoginType { phone, email }
 
-class User {
+mixin UserUtils {
+  String capitalize(String str) => str[0].toUpperCase() + str.substring(1).toLowerCase();
+}
+
+class User with UserUtils {
   String email;
   String phone;
 
@@ -72,7 +76,7 @@ class User {
   }
 
   String get name {
-    return "".capitalize(_firstName) + " " + "".capitalize(_lastName);
+    return capitalize(_firstName) + " " + capitalize(_lastName);
   }
 
   void addFriends(List<User> users) {
