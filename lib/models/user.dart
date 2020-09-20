@@ -1,5 +1,3 @@
-import '../string_util.dart';
-
 enum LoginType { phone, email }
 
 mixin UserUtils {
