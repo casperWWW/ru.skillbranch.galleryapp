@@ -36,7 +36,7 @@ class _FeedState extends State<Feed> {
               return FullScreenImage(
                   photo: kFlutterDash,
                   name: 'Kirill Adeshchenko',
-                  userName: '@kaparray',
+                  userName: 'kaparray',
                   altDescription:
                       'Beautiful girl in a yellow dress with a flower on her head in the summer in the forest');
             }));

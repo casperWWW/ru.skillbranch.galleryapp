@@ -1,14 +1,18 @@
 import 'package:FlutterGalleryApp/widgets/widgets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:FlutterGalleryApp/res/res.dart';
+
+import 'feed_screen.dart';
 
 class FullScreenImage extends StatelessWidget {
   FullScreenImage(
       {Key key,
-      this.photo,
-      this.name,
-      this.userName,
-      this.altDescription})
+      this.photo = kFlutterDash,
+      this.name = 'Kirill Adeshchenko',
+      this.userName = 'kaparray',
+      this.altDescription =
+          'Beautiful girl in a yellow dress with a flower on her head in the summer in the forest'})
       : super(key: key);
 
   final String photo;
@@ -21,7 +25,7 @@ class FullScreenImage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: Icon(CupertinoIcons.back),
             color: AppColors.grayChateau,
             onPressed: () {
               Navigator.of(context).pop(true);
@@ -52,11 +56,12 @@ class FullScreenImage extends StatelessWidget {
   Widget _buildPhotoDescription() {
     return Padding(
       padding: EdgeInsets.only(top: 10, bottom: 15),
-      child: Text(altDescription,
-          style: AppStyles.h3.copyWith(color: AppColors.textGray),
-          overflow: TextOverflow.ellipsis,
-          maxLines: 3,
-          ),
+      child: Text(
+        altDescription,
+        style: AppStyles.h3.copyWith(color: AppColors.textGray),
+        overflow: TextOverflow.ellipsis,
+        maxLines: 3,
+      ),
     );
   }
 
@@ -69,7 +74,7 @@ class FullScreenImage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text(name, style: AppStyles.h1Black),
-          Text(userName,
+          Text('@$userName',
               style: AppStyles.h5Black.copyWith(color: AppColors.manatee))
         ],
       )
